@@ -1,1 +1,1 @@
-declare module 'layout/Module';
+declare module 'layout/*';
