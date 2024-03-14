@@ -32,9 +32,6 @@
 							"projects/root/src/styles.scss"
 						],
 						"scripts": [],
-						"ssr": {
-							"entry": "projects/root/server.ts"
-						},
 						"main": "projects/root/src/main.ts",
 						"extraWebpackConfig": "projects/root/webpack.config.js",
 						"commonChunk": false
