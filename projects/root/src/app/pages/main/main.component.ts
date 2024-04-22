@@ -8,15 +8,22 @@ import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   @ViewChild('header', { read: ViewContainerRef })
-  viewContainer!: ViewContainerRef;
+  headerContainer!: ViewContainerRef;
+
+  @ViewChild('menu', { read: ViewContainerRef })
+  menuContainer!: ViewContainerRef;
 
   ngOnInit(): void {
-    this.loadHeader();
+    this.loadLayout();
   }
 
-  async loadHeader() {
-    const m = await import('layout/Component/Header');
-    const ref = this.viewContainer.createComponent(m.HeaderComponent);
+  async loadLayout() {
+    const header = await import('layout/Component/Header');
+    this.headerContainer.createComponent(header.HeaderComponent);
+
+    const menu = await import('layout/Component/Menu');
+    this.menuContainer.createComponent(menu.MenuComponent);
+
     // const compInstance = ref.instance;
     // compInstance.ngOnInit()
   }
